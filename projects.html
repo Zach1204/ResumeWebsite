@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Zach Farmer">
+        <meta name="date" content="02/08/2024">
+        <meta name="description" content="about">
+        <meta name="keywords" content="about">
+        <title>ResumeAbout</title>
+        <link rel="stylesheet" href="css/projects.css">
+        <!--
+            Author:         Zach Farmer
+            Date:           02/08/2024
+            Last Revised:   02/08/2024
+            Description:    Resume
+        -->
+    </head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html" style="text-decoration: underline;">Completed Projects</a>
+        <a href="products.html">Work Experience</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+    <article>
+        <section class="title">
+            <h1>Completed Projects</h1>
+        </section>
+        <section>
+            <body>
+                <h2>&nbsp;&nbsp;&nbsp;Calculator</h2>
+                <input id="display" type="text" readonly><br><br>
+                <input type="button" value="1" onclick="appendNumber('1')">
+                <input type="button" value="2" onclick="appendNumber('2')">
+                <input type="button" value="3" onclick="appendNumber('3')">
+                <input type="button" value="+" onclick="appendNumber('+')"><br><br>
+                <input type="button" value="4" onclick="appendNumber('4')">
+                <input type="button" value="5" onclick="appendNumber('5')">
+                <input type="button" value="6" onclick="appendNumber('6')">
+                <input type="button" value="-" onclick="appendNumber('-')"><br><br>
+                <input type="button" value="7" onclick="appendNumber('7')">
+                <input type="button" value="8" onclick="appendNumber('8')">
+                <input type="button" value="9" onclick="appendNumber('9')">
+                <input type="button" value="*" onclick="appendNumber('*')"><br><br>
+                <input type="button" value="C" onclick="clear()">
+                <input type="button" value="0" onclick="appendNumber('0')">
+                <input type="button" value="=" onclick="calculate()">
+                <input type="button" value="/" onclick="appendNumber('/')"><br><br>
+                <script>
+                    function appendNumber(value) {
+                        document.getElementById('display').value += value;
+                    }
+            
+                    function clear() {
+                        document.getElementById('display').value = '';
+                    }
+            
+                    function calculate() {
+                        try {
+                            var result = eval(document.getElementById('display').value);
+                            document.getElementById('display').value = result;
+                        } catch (error) {
+                            alert('Error: ' + error);
+                            clear();
+                        }
+                    }
+                </script>
+                <p>
+                 Most of my Projects are in C#, however this JavScript Calculator I was able to quickly make and implement into this website.
+                 <br>
+                 <br>
+                 Other Projects I have made Include My main Project in C# which was a recreation of the simple game "Zork,"
+                 <br>
+                 
+                </p>
+            </body>
+        </section>
+    </article>
+    <footer>
+        <!--Users can also use the footer to go back to a certain page.--> 
+        <p> 
+          <a href="home.html">Home</a> 
+          <a href="about.html">About Me</a> 
+          <a href="projects.html">Completed Projects</a> 
+          <a href="products.html">Work Experience</a> 
+          <a href="contact.html">Contact Me</a> 
+          <br> <br><br> 
+        </p> 
+    </footer> 
+</body>
+</html>
